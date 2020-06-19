@@ -1,4 +1,4 @@
-package com.rabbit.rabbitmq.RabbitMqMessage.production;
+package com.rabbit.rabbitmq.RabbitMqMessage.direct.production;
 
 import com.rabbit.rabbitmq.utils.RabbitMQConnection;
 import com.rabbitmq.client.Channel;
@@ -10,9 +10,10 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @author xingchongyang
+ * 直连
  */
 @Slf4j
-public class DirectConnection {
+public class DirectProduction {
 
     //队列名称
     private final static String QUEUE_NAME;

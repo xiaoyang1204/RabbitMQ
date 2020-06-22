@@ -4,7 +4,10 @@ import com.rabbit.rabbitmq.utils.RabbitMQConnection;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
-
+/**
+ * @author xingchongyang
+ * 工作者模式
+ */
 public class WorkConsumer1 {
 
     private final static String WORK_QUEUE_NAME = "work_queue_name";

@@ -21,12 +21,12 @@ public class WorkFairProduction {
 
         /**
          *  durable 是否持久化
-         *    如果已经生成的队列名称 WORK_QUEUE_NAME ，将flase 还成true 是不可以的，尽管代码是正确的，也不会运行成功的。
+         *    如果已经生成的队列名称 WORK_QUEUE_NAME ，将false 还成true 是不可以的，尽管代码是正确的，也不会运行成功的。
          *    RabbitMQ 不准许重新定义（不同参数）已存在的队列。
          *    解决方案，删除这个队列，或者定义不同名称的队列。
          */
         Boolean durable = false;
-        channel.queueDeclare(WORK_QUEUE_NAME,durable,false,false,null);
+        channel.queueDeclare(WORK_QUEUE_NAME, durable,false,false,null);
         //同一个服务器发送给一个消费者
         channel.basicQos(1);
         for (int i = 0; i < 50; i++) {

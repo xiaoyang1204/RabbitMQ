@@ -17,12 +17,14 @@ import java.util.concurrent.TimeoutException;
 @RestController
 public class RabbitMqController {
 
+    //api 如:localhost:8080/hello
+
     @GetMapping("/hello")
     public String hello(){
         return JSON.toJSONString("hello");
     }
 
-    //----------------------------------direct-------------------------------------------
+    //----------------------------------direct直连模式-------------------------------------------
 
     @GetMapping(value = "/push/direct")
     public void DirectPush() throws IOException, TimeoutException {
@@ -34,7 +36,7 @@ public class RabbitMqController {
         DirectConsumer.getDirectConsumer();
     }
 
-    //----------------------------------work-------------------------------------------
+    //----------------------------------work工作者模式(多劳多得)-------------------------------------------
 
     @GetMapping(value = "/receive/workPush")
     public void workPush() throws IOException, TimeoutException, InterruptedException {

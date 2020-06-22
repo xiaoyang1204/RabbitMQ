@@ -31,9 +31,10 @@ public class DirectProduction {
         channel.queueDeclare(QUEUE_NAME,false,false,false,null);
         //消息内容
         String message = "hello rabbitMQ Direct";
-
+        //发送消息
         channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
-        log.info(message);
+
+//        log.info(message);
         //关闭通道和连接
         channel.close();
         connectino.close();

@@ -6,6 +6,7 @@ import com.rabbit.rabbitmq.RabbitMqMessage.direct.production.DirectProduction;
 import com.rabbit.rabbitmq.RabbitMqMessage.work.WorkConsumer1;
 import com.rabbit.rabbitmq.RabbitMqMessage.work.WorkConsumer2;
 import com.rabbit.rabbitmq.RabbitMqMessage.work.WorkProduction;
+import com.rabbit.rabbitmq.RabbitMqMessage.workfair.WorkFairProduction;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
@@ -56,7 +57,19 @@ public class RabbitMqController {
 
     //----------------------------------work公平分发FairDispath-------------------------------------------
 
+    @GetMapping(value = "/receive/workFairPush")
+    public void workFairPush() throws IOException, TimeoutException, InterruptedException {
+        WorkFairProduction.pushWorkProduction();
+    }
 
+    @GetMapping(value = "/receive/workFairConsumer1")
+    public void workFairConsumer1() throws IOException, TimeoutException, InterruptedException {
+        WorkFairProduction.pushWorkProduction();
+    }
 
+    @GetMapping(value = "/receive/workFairConsumer2")
+    public void workFairConsumer2() throws IOException, TimeoutException, InterruptedException {
+        WorkFairProduction.pushWorkProduction();
+    }
 
 }

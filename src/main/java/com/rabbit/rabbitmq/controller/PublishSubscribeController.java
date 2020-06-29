@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * @author xingchongyang
+ */
 @RestController
 public class PublishSubscribeController {
 

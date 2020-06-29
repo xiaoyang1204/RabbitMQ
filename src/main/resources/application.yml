@@ -1,2 +1,13 @@
 server:
   port: 8080
+spring:
+  rabbitmq:
+    host: 49.235.193.4
+    port: 5672
+    username: test
+    password: test
+    virtual-host: /
+    #必须配置这个才会确认回调
+    publisher-confirm-type: correlated
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true

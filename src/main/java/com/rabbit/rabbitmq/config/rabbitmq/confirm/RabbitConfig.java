@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @author xingchongyang
  * 消息确认回调函数
  */
-@Configuration
+//@Configuration
 public class RabbitConfig {
     /**
      * 写了两个回调函数，一个叫 ConfirmCallback ，一个叫 RetrunCallback；

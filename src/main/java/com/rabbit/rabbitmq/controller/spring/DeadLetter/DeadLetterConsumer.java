@@ -1,6 +1,6 @@
 package com.rabbit.rabbitmq.controller.spring.DeadLetter;
 
-import com.rabbit.rabbitmq.config.rabbitmq.DeadLetter.RabbitDeadLetterConfig;
+import com.rabbit.rabbitmq.config.rabbitmq.deadLetter.RabbitDeadLetterConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

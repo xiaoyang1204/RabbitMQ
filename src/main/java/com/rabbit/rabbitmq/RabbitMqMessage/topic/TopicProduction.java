@@ -1,6 +1,7 @@
 package com.rabbit.rabbitmq.RabbitMqMessage.topic;
 
 import com.rabbit.rabbitmq.utils.RabbitMQConnection;
+import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 
@@ -26,6 +27,7 @@ public class TopicProduction {
         channel.exchangeDeclare(EXCHANGE_TOPIC,"topic");
         channel.basicQos(1);
         String smg = "hello topic";
+
         channel.basicPublish(EXCHANGE_TOPIC,"goods.add",null,smg.getBytes());
         channel.close();
         connection.close();

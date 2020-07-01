@@ -1,6 +1,8 @@
 package com.rabbit.rabbitmq.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.rabbit.rabbitmq.RabbitMqMessage.deadLetter.DeadLetterConsumer;
+import com.rabbit.rabbitmq.RabbitMqMessage.deadLetter.DeadLetterProduction;
 import com.rabbit.rabbitmq.RabbitMqMessage.direct.consumer.DirectConsumer;
 import com.rabbit.rabbitmq.RabbitMqMessage.direct.production.DirectProduction;
 import com.rabbit.rabbitmq.RabbitMqMessage.work.WorkConsumer1;
@@ -72,4 +74,16 @@ public class RabbitMqController {
         WorkFairProduction.pushWorkProduction();
     }
 
+
+    //===========================================死信队列==========================================
+
+    @GetMapping(value = "/receive/deadLetterPush")
+    public void deadLetterPush() throws IOException, TimeoutException, InterruptedException {
+        DeadLetterProduction.send();
+    }
+
+    @GetMapping(value = "/receive/deadLetterConsumer")
+    public void deadLetterConsumer() throws IOException, TimeoutException, InterruptedException {
+        DeadLetterConsumer.receive();
+    }
 }

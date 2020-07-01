@@ -1,4 +1,4 @@
-package com.rabbit.rabbitmq.config.rabbitmq.DeadLetter;
+package com.rabbit.rabbitmq.config.rabbitmq.deadLetter;
 
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;

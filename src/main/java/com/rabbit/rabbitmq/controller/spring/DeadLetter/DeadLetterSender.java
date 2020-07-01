@@ -1,6 +1,6 @@
 package com.rabbit.rabbitmq.controller.spring.DeadLetter;
 
-import com.rabbit.rabbitmq.config.rabbitmq.DeadLetter.RabbitDeadLetterConfig;
+import com.rabbit.rabbitmq.config.rabbitmq.deadLetter.RabbitDeadLetterConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

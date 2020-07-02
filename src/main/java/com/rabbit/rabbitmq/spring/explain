@@ -1,0 +1,2 @@
+RabbitMQ基于spring整合:
+    消息特性（direct模式、fanout模式、topic模式、死信队列）
